@@ -1,0 +1,14 @@
+{
+  "name": "knife-handle",
+  "version": "0.0.0",
+  "description": "Backend GraphQL server for Knife",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "apollo-engine": "^1.1.1",
+    "esm": "^3.0.46",
+    "graphql-yoga": "^1.14.6"
+  }
+}
