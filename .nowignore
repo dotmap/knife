@@ -1,5 +1,5 @@
 *.mdx
-*.test.js
+*.spec.js
 .eslintrc
 .prettierrc
 .lintstagedrc
