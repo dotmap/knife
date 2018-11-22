@@ -6,3 +6,8 @@
 LICENSE
 README.md
 .sail.yml
+coverage
+.next
+node_modules
+babel.config.js
+jest.setup.js
