@@ -3,7 +3,7 @@
   "name": "knife",
   "builds": [
     { "src": "backend/**/*.js", "use": "@now/node" },
-    { "src": "frontend/next.config.js", "use": "@now/next" }
+    { "src": "frontend/next.config.js", "use": "@now/next@canary" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/$1" },
