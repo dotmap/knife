@@ -5,7 +5,7 @@ import propTypes from 'prop-types'
 
 class AboutPage extends Component {
   static getInitialProps () {
-    const isServer = typeof window === 'undefined'
+    const isServer = typeof global === 'undefined'
     return { isServer }
   }
 
