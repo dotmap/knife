@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "test": "jest --coverage",
-    "test:frontend": "ava",
-    "test:backend": "ava",
+    "test:frontend": "jest frontend",
+    "test:backend": "jest backend",
     "lint": "eslint --fix \"frontend/**/*.js\" \"backend/**/*.js\"",
     "lint:frontend": "eslint --fix \"frontend/**/*.js\"",
     "lint:backend": "eslint --fix \"backend/**/*.js\""
