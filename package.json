@@ -7,6 +7,8 @@
   "license": "BSD-3-clause",
   "private": true,
   "scripts": {
+    "dev:frontend": "next frontend",
+    "build:frontend": "next build frontend",
     "test": "jest --coverage",
     "test:frontend": "jest frontend",
     "test:backend": "jest backend",
