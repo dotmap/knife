@@ -1,0 +1,8 @@
+*.mdx
+*.test.js
+.eslintrc
+.prettierrc
+.lintstagedrc
+LICENSE
+README.md
+.sail.yml

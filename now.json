@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "knife",
+  "builds": [
+    { "src": "backend/**/*.js", "use": "@now/node" },
+    { "src": "frontend/next.config.js", "use": "@now/next" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/$1" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
+  ],
+  "alias": ["knife.dotmap.co"]
+}
