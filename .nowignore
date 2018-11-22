@@ -4,10 +4,12 @@
 .prettierrc
 .lintstagedrc
 LICENSE
-README.md
+*.md
 .sail.yml
 coverage
 .next
 node_modules
 babel.config.js
 jest.setup.js
+/package.json
+/yarn.lock
