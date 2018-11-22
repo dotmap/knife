@@ -13,47 +13,61 @@ tasks:
       - yarn
     args:
       - install
-  lint_frontend:
+  test:
     image: node:8
     command:
       - yarn
     args:
-      - lint:frontend
-    when: *frontend
-  lint_backend:
+      - test
+  lint:
     image: node:8
     command:
       - yarn
     args:
-      - lint:backend
-    when: *backend
-  build_frontend:
-    image: node:8
-    command:
-      - yarn
-    args:
-      - build:frontend
-    when: *frontend
-  test_frontend:
-    image: node:8
-    command:
-      - yarn
-    args:
-      - test:frontend
-    when: *frontend
-  test_backend:
-    image: node:8
-    command:
-      - yarn
-    args:
-      - test:backend
-    when: *backend
+      - lint
+  # lint_frontend:
+  #   image: node:8
+  #   command:
+  #     - yarn
+  #   args:
+  #     - lint:frontend
+  #   when: *frontend
+  # lint_backend:
+  #   image: node:8
+  #   command:
+  #     - yarn
+  #   args:
+  #     - lint:backend
+  #   when: *backend
+  # build_frontend:
+  #   image: node:8
+  #   command:
+  #     - yarn
+  #   args:
+  #     - build:frontend
+  #   when: *frontend
+  # test_frontend:
+  #   image: node:8
+  #   command:
+  #     - yarn
+  #   args:
+  #     - test:frontend
+  #   when: *frontend
+  # test_backend:
+  #   image: node:8
+  #   command:
+  #     - yarn
+  #   args:
+  #     - test:backend
+  #   when: *backend
 
 workflow:
   - install
-  - sail:parallel:
-      - build_frontend
-      - lint_frontend
-      - test_frontend
-      - lint_backend
-      - test_backend
+  - test
+  - lint
+  # - sail:parallel:
+  #     - build_frontend
+  #     - lint_frontend
+  #     - test_frontend
+  #     - lint_backend
+  #     - test_backend
