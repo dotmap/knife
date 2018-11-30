@@ -1,12 +1,20 @@
 import { Component } from 'react'
 import Link from 'next/link'
 import Header from '../../components/header'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 class AboutPage extends Component {
-  static getInitialProps () {
-    const isServer = typeof global === 'undefined'
-    return { isServer }
+  static getInitialProps ({ req }) {
+    const isServer = typeof window === 'undefined'
+    let hostname
+    if (req) {
+      hostname = `http${process.env.NOW_REGION ? 's' : ''}://${req.headers.host}`
+    } else {
+      const { protocol, host } = window.location
+      hostname = `${protocol}//${host}`
+    }
+
+    return { hostname, isServer }
   }
 
   render () {
@@ -15,8 +23,12 @@ class AboutPage extends Component {
         <Header />
         <section>
           <p>
-            This is another page of the SSR example, you accessed it{' '}
+            This is another page of the SSR example, you accessed it
             <strong>{this.props.isServer ? 'server' : 'client'} side</strong>.
+            <p>
+              {this.props.isServer ? <p>Server: </p> : <p>Client: </p>}
+              {this.props.hostname}
+            </p>
           </p>
           <p>You can reload to see how the page change.</p>
           <Link href='/'>
@@ -29,7 +41,8 @@ class AboutPage extends Component {
 }
 
 AboutPage.propTypes = {
-  isServer: propTypes.bool
+  hostname: PropTypes.string,
+  isServer: PropTypes.bool
 }
 
 export default AboutPage

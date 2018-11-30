@@ -16,6 +16,11 @@ exports[`About page matches snapshot 1`] = `
          side
       </strong>
       .
+      <p>
+        <p>
+          Client: 
+        </p>
+      </p>
     </p>
     <p>
       You can reload to see how the page change.
