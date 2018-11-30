@@ -13,7 +13,6 @@ class HomePage extends Component {
     } catch (e) {
       greeting = JSON.stringify(e)
     }
-    console.log(greeting)
     return greeting
   }
 
